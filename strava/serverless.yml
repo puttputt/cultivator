@@ -1,0 +1,17 @@
+
+service: cultivator-strava
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+
+functions:
+  club:
+    handler: handler.club
+    events:
+      - http:
+          path: club
+          method: get
+
+plugins:
+  - serverless-offline
